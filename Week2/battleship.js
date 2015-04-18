@@ -56,6 +56,5 @@ function printGrid(){
 // take input and give outcome
 
 
-
 makeGrid();
 printGrid();
