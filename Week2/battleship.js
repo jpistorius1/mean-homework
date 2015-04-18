@@ -1,8 +1,20 @@
 //make grid
+var ask = require('readline-sync');
 var grid = [];
-
+var battleship = 3;
+var shipsToSink = 3;
 var rows = 10;
-var columns = 10;
+var columns = 10
+
+gameStart();
+
+function gameStart(){
+	makeGrid();
+	 while (shipsToSink > 0){
+			printGrid();
+			userCoordinates();
+	}
+}
 
 function makeGrid(){
 
@@ -11,7 +23,7 @@ function makeGrid(){
 		for (var y = 0; y < columns; y++) {
 			var space = {
 				hit: false,
-				ship: false
+				ship: shipPlacement()
 			};
 			grid[x].push(space);
 		}
@@ -34,7 +46,7 @@ function printGrid(){
 					symbol = "M";
 				}
 			} else {
-				symbol = "o";
+				symbol = "O";
 			}
 			lineArray.push(symbol);
 		}
@@ -42,19 +54,48 @@ function printGrid(){
 	}
 }
 
-
-
-// set markers
-
-
-
-
 // make ships
 
+function shipPlacement(){
+	(battleship > 3);
+	if (battleship > 0){
+		if((Math.floor(Math.random() * 5) == 4)){
+			battleship --;
+			return true;
+		}
+	}
+
+	return false;
+
+}
 
 
 // take input and give outcome
 
+function userCoordinates(){
+	var coordinateX = ask.question("Input coordinate of X: 1-10 ");
+	var coordinateY = ask.question("Input coordinate of Y: 1-10 ");
+	var shotResult = checkSpaces(coordinateX, coordinateY);
+	updateSpace(coordinateX, coordinateY);
 
-makeGrid();
-printGrid();
+	if(shotResult == true){
+		console.log("You've hit a ship! ");
+		shipsToSink --;
+	} else {
+		console.log("Miss. Try again. ");
+	}
+}
+
+function checkSpaces(x, y){
+	var shotResult = grid[x][y]['ship'];
+	return shotResult; 
+} 
+
+
+function updateSpace(x, y, result){
+	var space = grid[x][y];
+	
+	space['hit'] = true;
+
+}
+
