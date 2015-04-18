@@ -35,7 +35,6 @@ function printGrid(){
 				}
 			} else {
 				symbol = "o";
-
 			}
 			lineArray.push(symbol);
 		}
@@ -51,6 +50,8 @@ function printGrid(){
 
 
 // make ships
+
+
 
 // take input and give outcome
 
