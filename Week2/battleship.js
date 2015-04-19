@@ -46,7 +46,7 @@ function printGrid(){
 					symbol = "M";
 				}
 			} else {
-				symbol = "O";
+				symbol = "~";
 			}
 			lineArray.push(symbol);
 		}
@@ -73,8 +73,8 @@ function shipPlacement(){
 // take input and give outcome
 
 function userCoordinates(){
-	var coordinateX = ask.question("Input coordinate of X: 1-10 ");
-	var coordinateY = ask.question("Input coordinate of Y: 1-10 ");
+	var coordinateX = ask.question("Input coordinate of X: 0-9 ");
+	var coordinateY = ask.question("Input coordinate of Y: 0-9 ");
 	var shotResult = checkSpaces(coordinateX, coordinateY);
 	updateSpace(coordinateX, coordinateY);
 
