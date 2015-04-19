@@ -98,5 +98,3 @@ function updateSpace(x, y, result){
 	space['hit'] = true;
 
 }
-
-//a
