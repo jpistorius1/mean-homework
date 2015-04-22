@@ -26,7 +26,7 @@ var generateMonster = function(){
 function timerOfRequest(){
 	var fed = false;
 	var bored = false;
-	setInterval(function ()) {
+	setInterval(function () {
 		if (myMonster.mood == moods[0]){
 			checkFed(fed);
 			fed = false;
@@ -77,8 +77,6 @@ function checkBored(bored){
 		myMonster.health -= 10; 
 	}
 }
-
-// health = 0 and death
 
 function checkHealth(){
 	if (myMonster.health == 0){
