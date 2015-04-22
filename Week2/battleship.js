@@ -96,5 +96,4 @@ function updateSpace(x, y, result){
 	var space = grid[x][y];
 	
 	space['hit'] = true;
-
 }
