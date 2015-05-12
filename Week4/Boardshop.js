@@ -169,5 +169,5 @@ function updateLongboard (id){
 }
 
 function createLongboard (id){
-
+	
 }
