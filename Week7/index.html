@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>90s Nostaliga Shows</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body ng-app="cartoonNostalgiaApp">
+
+<div ng-controller="cartoonNostalgiaCtrl" class="container">
+	<div class="row">
+		<div class="col-sm-4">
+		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.name">Name</input><br>
+		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.image">Image</input><br>
+		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.userID">User ID</input>
+		<br><br>
+		<button ng-click="addCharacter()">Submit your favorite!</button>
+
+		</div>	
+	<br><br>
+		<div ng-repeat="thing in allCharacters" class="col-sm-4">
+			{{thing.characterName}}<br>
+			<img ng-src="{{thing.imgURL}}" class="img-responsive"><br>
+			{{thing.userName}}<br>
+
+		
+		</div>
+	</div>
+</div>
+
+<!--50 pre-populated names/images-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="modelservice.js"></script>
+<script src="modelmanager.js"></script>
+</body>
+</html>
