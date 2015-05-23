@@ -6,28 +6,53 @@
 </head>
 <body ng-app="cartoonNostalgiaApp">
 
-<div ng-controller="cartoonNostalgiaCtrl" class="container">
+
+<div ng-controller="cartoonNostalgiaCtrl" class="container" style="padding-top: 35px;">
 	<div class="row">
-		<div class="col-sm-4">
-		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.name">Name</input><br>
-		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.image">Image</input><br>
-		<button ng-click="deleteYourCharacter()">x</button><input type="text" ng-model="newCharacter.userID">User ID</input>
-		<br><br>
-		<button ng-click="addCharacter()">Submit your favorite!</button>
-
-		</div>	
-	<br><br>
-		<div ng-repeat="thing in allCharacters" class="col-sm-4">
-			{{thing.characterName}}<br>
-			<img ng-src="{{thing.imgURL}}" class="img-responsive"><br>
-			{{thing.userName}}<br>
-
-		
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-3">
+					<input type="text" ng-model="newCharacter.name" placeholder="Name" class="form-control">
+				</div>
+				<div class="col-sm-3">
+					<input type="text" ng-model="newCharacter.imgURL" placeholder="Image URL" class="form-control">
+				</div>
+				<div class="col-sm-3">
+					<input type="text" ng-model="newCharacter.userName" placeholder="Your User ID" class="form-control">
+				</div>
+				<div class="col-sm-3">
+					<button ng-click="addCharacter()" class="btn btn-success">Submit your favorite!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div ng-repeat="thing in allCharacters track by $index" class="col-sm-3">
+			<!-- </div ng-if="{$index % 3 === 0}">
+			<div class="row" ng-if="{$index % 3 === 0}">
+			<div class="col-sm-4" ng-if="{$index % 3 === 0}"> -->
+			<div class="row">
+				<div class="col-sm-12">
+					<h3>
+						<button ng-click="deleteCartoon($index)" class="btn btn-xs btn-danger">X</button>
+						<span style="color:#FF0000;">
+							{{thing.name}}
+						</span>
+					</h3>
+				</div>
+				<div class="col-sm-12">
+					<img ng-src="{{thing.imgURL}}" class="img-responsive">
+				</div>
+				<div class="col-sm-12" style="color: #FF0000; font-size: 10px;">
+					<strong>{{thing.userName}}</strong>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 
-<!--50 pre-populated names/images-->
+
+<embed src="./audio/tmnt.mp3" autostart="true" loop="infinite" width="2" height="0"></embed>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="app.js"></script>

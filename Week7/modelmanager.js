@@ -8,6 +8,9 @@ app.service('modelManager', function(modelService){
 		return modelService.characterList;
 	}
 	this.addCharacter = function(newCharacter){
-		modelService.characterList.push()
+		modelService.characterList.push(newCharacter);
+	}
+	this.deleteCharacter = function(index){
+		modelService.characterList.splice(index, 1);
 	}
 });

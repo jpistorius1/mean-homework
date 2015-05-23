@@ -7,6 +7,14 @@ app.controller('cartoonNostalgiaCtrl', function($scope, modelManager){
 	$scope.userCharactersSubmitted = function(){
 		//return $scope.
 	};
+
 	$scope.allCharacters = modelManager.getCharacters();
-	$scope.addCharacter = modelManager.addCharacter($scope.newCharacter);
+	$scope.addCharacter = function(){
+		modelManager.addCharacter($scope.newCharacter);
+		$scope.newCharacter = {};
+	}
+	$scope.deleteCartoon = function(deleteCharacter){
+		modelManager.deleteCharacter($scope.deleteCharacter);
+	}
+
 });
