@@ -13,8 +13,8 @@ app.controller('cartoonNostalgiaCtrl', function($scope, modelManager){
 		modelManager.addCharacter($scope.newCharacter);
 		$scope.newCharacter = {};
 	}
-	$scope.deleteCartoon = function(deleteCharacter){
-		modelManager.deleteCharacter($scope.deleteCharacter);
+	$scope.deleteCartoon = function(index){
+		modelManager.deleteCharacter(index);
 	}
 
 });

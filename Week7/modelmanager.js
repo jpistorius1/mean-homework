@@ -8,9 +8,14 @@ app.service('modelManager', function(modelService){
 		return modelService.characterList;
 	}
 	this.addCharacter = function(newCharacter){
+		if (newCharacter.name == undefined || newCharacter.imgURL == undefined || newCharacter.userName == undefined){
+			alert("You didn't fill out the form")
+		} else {
 		modelService.characterList.push(newCharacter);
+		}
 	}
 	this.deleteCharacter = function(index){
 		modelService.characterList.splice(index, 1);
 	}
+	
 });

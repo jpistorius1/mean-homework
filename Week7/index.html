@@ -4,7 +4,7 @@
 	<title>90s Nostaliga Shows</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
-<body ng-app="cartoonNostalgiaApp">
+<body ng-app="cartoonNostalgiaApp" background="http://stuffpoint.com/90s-cartoons/image/309574-90s-cartoons-90s.jpg">
 
 
 <div ng-controller="cartoonNostalgiaCtrl" class="container" style="padding-top: 35px;">
@@ -27,15 +27,12 @@
 		</div>
 	</div>
 	<div class="row">
-		<div ng-repeat="thing in allCharacters track by $index" class="col-sm-3">
-			<!-- </div ng-if="{$index % 3 === 0}">
-			<div class="row" ng-if="{$index % 3 === 0}">
-			<div class="col-sm-4" ng-if="{$index % 3 === 0}"> -->
+		<div ng-repeat="thing in allCharacters" class="col-sm-3">
 			<div class="row">
 				<div class="col-sm-12">
 					<h3>
 						<button ng-click="deleteCartoon($index)" class="btn btn-xs btn-danger">X</button>
-						<span style="color:#FF0000;">
+						<span style="color:#E60000;">
 							{{thing.name}}
 						</span>
 					</h3>
@@ -49,7 +46,23 @@
 			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6" style="padding-left:5px, padding-right:10px">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/CTcy51kHDTM" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="col-sm-6" style="padding-left:15px">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/Diaw5ccq--Y" frameborder="0" allowfullscreen></iframe>
+		</div>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6" style="padding-left:30px">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/cYpL3RCI15Q" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="col-xs-12 col-sm-6" style="padding-right:10px">
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/hOqLNn-C6c0" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
 </div>
+	
 
 
 <embed src="./audio/tmnt.mp3" autostart="true" loop="infinite" width="2" height="0"></embed>
