@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Garage Sale!!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body ng-app="cloudSale">
+	<div ng-controller="cloudController">
+		<div class="container">
+			<div class="row">
+			<div class="col-md-8">
+				<h1> Garage Sale </h1>
+				<ul ng-repeat="item in itemList">
+					<p>{{item.name}}</p>
+					<p>{{item.price}}</p>
+					<p>Condition: {{item.condition}}</p>
+					<p>Description: {{item.description}}</p>
+					<p><img ng-src="{{item.image}}"></p>
+					<button ng-click="saveToCart(item)">Save to cart</button>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<h1> Cart</h1>
+				<ul ng-repeat="item in cartList">
+					<p>{{item.name}}</p>
+					<p>{{item.price}}</p>
+					<p>Condition: {{item.condition}}</p>
+					<p>Description: {{item.description}}</p>
+					<p><img ng-src="{{item.image}}"></p>
+				</ul>
+			</div>
+			</div>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script src="cloudSale.js"></script>
+
+
+</body>
+</html>
