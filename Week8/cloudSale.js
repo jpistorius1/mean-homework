@@ -12,12 +12,14 @@ app.controller('cloudController', function($scope, $http){
 
 	$http.get('http://mean.codingcamp.us:5555/jerry/cart')
 	.success(function(data){
-		$scope.cartList = [data]; // FIX WHEN SERVER IS FIXED REMOVE []
+		$scope.cartList = data;
 		console.log($scope.cartList)
 	});
 
 	$scope.saveToCart = function(product){
-		$http.post('http://mean.codingcamp.us:5555/jerry/cart', product);
+		
+		$scope.cartList.push(product);
+		$http.post('http://mean.codingcamp.us:5555/jerry/cart', $scope.cartList)
 		
   
 	};
