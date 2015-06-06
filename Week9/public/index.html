@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class Twitter</title>
+	<script src="./public/components/jquery-2.1.4.min.js"></script>
+	<script src="./public/components/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body ng-app="tweet">
+
+
+<a href="/#/home">Homeward bound</a>
+<a href="/#/tweets">See all tweets</a>
+<a href="/#/tweets/:username?">Indiviual tweets</a>
+
+<ng-view></ng-view>
+
+
+
+<script src="./public/components/angular.min.js"></script>
+<script src="./public/components/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="./public/views/home/home.js"></script>
+<script src="./public/views/tweets/tweetsController.js"></script>
+
+</body>
+</html>
